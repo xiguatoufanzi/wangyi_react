@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { Button } from "antd-mobile";
+import { Router } from "react-router-dom";
+import TabBar from "./components/TabBar/TabBar";
+import history from "./utils/history";
 
-import "./app.css";
+import "./assets/reset.css";
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Button type="primary">primary</Button>
-        <div className="box"></div>
-      </div>
+      <Router history={history}>
+        <TabBar></TabBar>
+      </Router>
     );
   }
 }

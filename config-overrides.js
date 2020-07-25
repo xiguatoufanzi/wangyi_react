@@ -42,7 +42,7 @@ module.exports = override(
   addDecoratorsLegacy(),
   // 路径简写 / 路径别名
   addWebpackAlias({
-    "@": resolvePath("src"),
+    // "@": resolvePath("src"),
     "@utils": resolvePath("utils"),
     "@api": resolvePath("api"),
     "@comps": resolvePath("components"),

@@ -1,0 +1,20 @@
+#tab-bar.demo {
+  display: flex;
+  flex-direction: column;
+}
+#tab-bar .demoName {
+  height: 40px;
+}
+.demo-preview-item .am-tab-bar {
+  background-color: pink;
+}
+.am-tab-bar-bar {
+  height: 97px;
+}
+.barImg {
+  width: 40px;
+  height: 40px;
+}
+.bartxt {
+  font-size: 24px;
+}
