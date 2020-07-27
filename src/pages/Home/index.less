@@ -1,9 +1,12 @@
 .headerContainer {
-  background: #fff;
+  background: #eee;
   position: relative;
+  margin-bottom: 88px;
 
   .header {
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
     z-index: 6;
     background: #fff;
     display: flex;
@@ -54,8 +57,18 @@
   }
 }
 
+.am-tabs-pane-wrap {
+  > div {
+    background: #eee !important;
+  }
+}
 .am-tabs-default-bar {
   padding-left: 30px;
+  position: fixed;
+  height: 60px;
+  .am-tabs-default-bar-content {
+    background: #fff;
+  }
   .am-tabs-default-bar-tab {
     font-size: 28px;
     color: #555;
@@ -75,4 +88,40 @@
   .am-tabs-default-bar-underline {
     display: none;
   }
+}
+
+// 固定定位
+.goGift {
+  position: fixed;
+  right: 0;
+  top: 1000px;
+  width: 112px;
+  height: 80px;
+  z-index: 10;
+  animation: 0.8s moveLeft linear;
+  background: url("http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/wapNewUserEntry-b69d0624fd.png?imageView&type=webp");
+  background-size: 100% 100%;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+
+  @keyframes moveLeft {
+    from {
+      right: -200px;
+    }
+    to {
+      right: 0;
+    }
+  }
+}
+.goToTop {
+  position: fixed;
+  right: 23px;
+  bottom: 130px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 82px;
+  height: 82px;
+  background-image: url("../../assets/images/home/goToTop.webp");
+  background-size: 82px;
+  z-index: 2;
 }

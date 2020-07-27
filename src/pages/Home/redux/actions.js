@@ -20,13 +20,13 @@ const getHomeDataSync = (homeData) => ({
 });
 
 export const getHomeList = () => {
-  return (dispatch) => {
-    /* const result = await getHomeData();
-    dispatch(getHomeDataSync(result.data)); */
+  return async (dispatch) => {
+    const result = await getHomeData();
+    dispatch(getHomeDataSync(result.data));
     // 执行异步代码~
-    return getHomeData().then((response) => {
+    /* return getHomeData().then((response) => {
       dispatch(dispatch(getHomeDataSync(response.data)));
       return response.data;
-    });
+    }); */
   };
 };

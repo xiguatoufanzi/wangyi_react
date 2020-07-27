@@ -21,13 +21,10 @@ class Home extends Component {
 
   toLogin() {}
 
+  // 根据导航显示具体页面
   tabsContent = (tab) => (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "150px",
         backgroundColor: "#fff",
       }}
     >
@@ -35,19 +32,16 @@ class Home extends Component {
     </div>
   );
 
-  render() {
-    const tabs = [
-      { title: "1st Tab" },
-      { title: "2nd Tab" },
-      { title: "3rd Tab" },
-      { title: "4th Tab" },
-      { title: "5th Tab" },
-      { title: "6th Tab" },
-      { title: "7th Tab" },
-      { title: "8th Tab" },
-      { title: "9th Tab" },
-    ];
+  // 头部导航数据
+  tabs = () => {
+    let tabs = this.props.homeList.kingKongModule;
+    if (tabs) {
+      tabs = tabs.kingKongList.map((item) => ({ title: item.text }));
+      return (tabs = [{ title: "推荐" }, ...tabs]);
+    }
+  };
 
+  render() {
     return (
       <div>
         {/* 顶部 */}
@@ -69,12 +63,20 @@ class Home extends Component {
         {/* 头部导航 */}
         <div className="headerNav" ref="wrapper">
           <Tabs
-            tabs={tabs}
+            tabs={this.tabs()}
+            swipeable={false}
             renderTabBar={(props) => <Tabs.DefaultTabBar {...props} />}
           >
             {this.tabsContent}
           </Tabs>
         </div>
+
+        {/* 固定定位 */}
+        <a
+          className="goGift"
+          href="https://act.you.163.com/act/pub/qAU4P437asfF.html"
+        ></a>
+        <i className="goToTop"></i>
       </div>
     );
   }

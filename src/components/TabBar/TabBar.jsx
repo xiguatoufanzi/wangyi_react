@@ -9,7 +9,7 @@ class TabBarExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: "redTab",
+      selectedTab: "blueTab",
       hidden: false,
       fullScreen: true,
     };
@@ -19,7 +19,7 @@ class TabBarExample extends Component {
     return (
       <div
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#eee",
         }}
       >
         <Switch>
