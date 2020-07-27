@@ -1,6 +1,7 @@
 .headerContainer {
   background: #fff;
   position: relative;
+
   .header {
     position: relative;
     z-index: 6;
@@ -45,5 +46,33 @@
       border: 1px solid #dd1a21;
       border-radius: 5px;
     }
+  }
+
+  .headerNav {
+    position: relative;
+    width: 750px;
+  }
+}
+
+.am-tabs-default-bar {
+  padding-left: 30px;
+  .am-tabs-default-bar-tab {
+    font-size: 28px;
+    color: #555;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: unset;
+    &.am-tabs-default-bar-tab-active {
+      color: #dd1a21;
+      &::after {
+        left: 0;
+        bottom: 0;
+        height: 4px !important;
+        background-color: #dd1a21 !important;
+      }
+    }
+  }
+  .am-tabs-default-bar-underline {
+    display: none;
   }
 }

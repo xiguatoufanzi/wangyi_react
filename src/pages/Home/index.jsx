@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Tabs from "./Tabs/Tabs";
+import { Tabs } from "antd-mobile";
+
+import Recommend from "./Recommend/Recommend";
 import "./index.css";
 
 export default class Home extends Component {
@@ -7,7 +9,33 @@ export default class Home extends Component {
 
   toLogin() {}
 
+  tabsContent = (tab) => (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "150px",
+        backgroundColor: "#fff",
+      }}
+    >
+      <Recommend />
+    </div>
+  );
+
   render() {
+    const tabs = [
+      { title: "1st Tab" },
+      { title: "2nd Tab" },
+      { title: "3rd Tab" },
+      { title: "4th Tab" },
+      { title: "5th Tab" },
+      { title: "6th Tab" },
+      { title: "7th Tab" },
+      { title: "8th Tab" },
+      { title: "9th Tab" },
+    ];
+
     return (
       <div>
         {/* 顶部 */}
@@ -15,7 +43,7 @@ export default class Home extends Component {
           {/* 头部区域 */}
           <div className="header">
             <h1>
-              <img src={require("../../assets/images/logo.png")} alt="" />
+              <img src={require("@assets/images/logo.png")} alt="" />
             </h1>
             <div className="searchContainer" onClick={this.toSearch}>
               <i></i>
@@ -28,11 +56,13 @@ export default class Home extends Component {
         </div>
         {/* 头部导航 */}
         <div className="headerNav" ref="wrapper">
-          <ul className="navList" v-if="homeData.kingKongModule">
-            <li className="navItem active">推荐</li>
-          </ul>
+          <Tabs
+            tabs={tabs}
+            renderTabBar={(props) => <Tabs.DefaultTabBar {...props} />}
+          >
+            {this.tabsContent}
+          </Tabs>
         </div>
-        <Tabs></Tabs>
       </div>
     );
   }
