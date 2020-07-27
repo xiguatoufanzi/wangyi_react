@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 import { Tabs } from "antd-mobile";
+import { connect } from "react-redux";
 
+import { getHomeList } from "./redux";
 import Recommend from "./Recommend/Recommend";
 import "./index.css";
 
-export default class Home extends Component {
+@connect(
+  (state) => ({
+    homeList: state.homeList,
+  }),
+  { getHomeList }
+)
+class Home extends Component {
+  componentDidMount() {
+    this.props.getHomeList();
+  }
+
   toSearch() {}
 
   toLogin() {}
@@ -67,3 +79,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home;

@@ -67,7 +67,7 @@
 .am-tabs-default-bar .am-tabs-default-bar-tab.am-tabs-default-bar-tab-active::after {
   left: 0;
   bottom: 0;
-  height: 4px !important;
+  height: 8px !important;
   background-color: #dd1a21 !important;
 }
 .am-tabs-default-bar .am-tabs-default-bar-underline {
